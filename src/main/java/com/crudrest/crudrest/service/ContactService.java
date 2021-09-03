@@ -15,4 +15,5 @@ public interface ContactService {
 	List<Contact> findAllContacts();
 	ResponseEntity<Contact> findById(long id);
 	Contact create(Contact contact);
+	Contact update(long id, Contact contact);
 }

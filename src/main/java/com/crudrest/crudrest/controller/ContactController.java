@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,5 +39,10 @@ public class ContactController {
 	@PostMapping
 	public Contact create(@RequestBody Contact contact) {
 		return contactService.create(contact);
+	}
+	
+	@PutMapping("/{id}")
+	public Contact update(@PathVariable("id") long id, @RequestBody Contact contact) {
+		return contactService.update(id, contact);
 	}
 }
