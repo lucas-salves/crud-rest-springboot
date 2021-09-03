@@ -2,6 +2,7 @@ package com.crudrest.crudrest.service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.crudrest.crudrest.model.Contact;
@@ -11,5 +12,5 @@ import com.crudrest.crudrest.repository.ContactRepository;
 public interface ContactService {
 	
 	List<Contact> findAllContacts();
-	
+	ResponseEntity<Contact> findById(long id);
 }
